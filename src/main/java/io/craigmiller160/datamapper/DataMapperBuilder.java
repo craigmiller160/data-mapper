@@ -1,5 +1,6 @@
 package io.craigmiller160.datamapper;
 
+import io.craigmiller160.datamapper.config.MapperConfiguration;
 import io.craigmiller160.datamapper.converter.Converter;
 
 import java.util.ArrayList;
@@ -13,7 +14,8 @@ public class DataMapperBuilder {
     private Map<Class<?>,List<String>> propertyIgnoreMap = new HashMap<>();
 
     public DataMapper build() {
-        throw new RuntimeException("Finish this");
+        final MapperConfiguration configuration = new MapperConfiguration(explicitConverters, propertyIgnoreMap);
+        return new DataMapper(configuration);
     }
 
     public DataMapperBuilder addExplicitConverter(final Converter<?,?> converter) {
