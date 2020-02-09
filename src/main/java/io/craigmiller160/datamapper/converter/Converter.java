@@ -1,4 +1,10 @@
 package io.craigmiller160.datamapper.converter;
 
-public interface Converter {
+import io.craigmiller160.datamapper.context.MappingContext;
+
+@FunctionalInterface
+public interface Converter<S,D> {
+
+    void convert(final MappingContext<S,D> context);
+
 }
