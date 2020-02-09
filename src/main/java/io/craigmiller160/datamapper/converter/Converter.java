@@ -2,9 +2,11 @@ package io.craigmiller160.datamapper.converter;
 
 import io.craigmiller160.datamapper.context.MappingContext;
 
-@FunctionalInterface
-public interface Converter<S,D> {
+// TODO for public consumption, have a custom converter version of this that doesn't require the MappingContext type param
 
-    void convert(final MappingContext<S,D> context);
+@FunctionalInterface
+public interface Converter<S,D,CTX extends MappingContext<S,D>> {
+
+    void convert(final CTX context);
 
 }
