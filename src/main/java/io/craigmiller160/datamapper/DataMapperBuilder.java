@@ -9,14 +9,14 @@ import java.util.Map;
 
 public class DataMapperBuilder {
 
-    private List<Converter> explicitConverters = new ArrayList<>();
+    private List<Converter<?,?>> explicitConverters = new ArrayList<>();
     private Map<Class<?>,List<String>> propertyIgnoreMap = new HashMap<>();
 
     public DataMapper build() {
         throw new RuntimeException("Finish this");
     }
 
-    public DataMapperBuilder addExplicitConverter(final Converter converter) {
+    public DataMapperBuilder addExplicitConverter(final Converter<?,?> converter) {
         explicitConverters.add(converter);
         return this;
     }
