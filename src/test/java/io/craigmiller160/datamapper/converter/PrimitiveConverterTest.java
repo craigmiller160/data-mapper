@@ -4,8 +4,6 @@ import org.junit.Test;
 
 public class PrimitiveConverterTest {
 
-    // TODO boolean
-
     @Test
     public void test_convert_byteToByte() {
         throw new RuntimeException();
